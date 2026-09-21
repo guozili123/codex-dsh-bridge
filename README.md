@@ -1,5 +1,7 @@
 # DSH Codex Read-Only Bridge
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 This local MCP server lets Codex list DSH workspaces and unarchived sessions.
 It is deliberately metadata-only: it does not read conversations, prompts,
 responses, tool logs, attachments, credentials, cookies, API keys, or tokens.

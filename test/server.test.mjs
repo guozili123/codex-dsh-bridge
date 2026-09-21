@@ -36,3 +36,13 @@ test('the example config uses stdio and no DSH token', async () => {
   assert.match(config, /command\s*=\s*"node"/);
   assert.doesNotMatch(config, /token|http:|https:/i);
 });
+
+test('the English and Simplified Chinese READMEs link to each other', async () => {
+  const [english, chinese] = await Promise.all([
+    readFile(new URL('../README.md', import.meta.url), 'utf8'),
+    readFile(new URL('../README.zh-CN.md', import.meta.url), 'utf8'),
+  ]);
+
+  assert.match(english, /\[简体中文\]\(README\.zh-CN\.md\)/);
+  assert.match(chinese, /\[English\]\(README\.md\)/);
+});
