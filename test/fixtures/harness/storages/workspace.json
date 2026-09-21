@@ -1,0 +1,14 @@
+{
+  "tables": {
+    "workspaces": {
+      "cvtrain": {
+        "title": "CV Training",
+        "path": "E:/projects/cvtrain",
+        "sessionIds": ["active", "done", "archived", "missing"]
+      }
+    }
+  },
+  "global": {
+    "archivedSessionIds": ["archived"]
+  }
+}
