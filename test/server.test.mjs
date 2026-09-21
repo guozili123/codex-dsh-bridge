@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
@@ -27,4 +28,11 @@ test('omits unavailable session records and reports only their count', async () 
   const result = await bridge.listSessions('CV Training');
 
   assert.deepEqual(result.warnings, ['1 malformed or unavailable session record(s) omitted']);
+});
+
+test('the example config uses stdio and no DSH token', async () => {
+  const config = await readFile(new URL('../codex-mcp.example.toml', import.meta.url), 'utf8');
+
+  assert.match(config, /command\s*=\s*"node"/);
+  assert.doesNotMatch(config, /token|http:|https:/i);
 });

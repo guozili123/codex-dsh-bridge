@@ -1,0 +1,3 @@
+[mcp_servers.dsh_readonly]
+command = "node"
+args = ["C:/absolute/path/to/dsh-codex-bridge/src/server.mjs"]
